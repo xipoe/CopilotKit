@@ -1,5 +1,5 @@
 ---
-title: Working with agent state
+title: Using agent state in chat
 description: How to connect your local UI to remote data for powerful workflows
 ---
 
@@ -139,7 +139,7 @@ workflow.add_conditional_edges(
 workflow.add_edge("tools", 'agent')
 workflow.set_finish_point("respond")
 
-basic_agent_app = workflow.compile(checkpointer=MemorySaver())
+basic_agent_graph = workflow.compile(checkpointer=MemorySaver())
 ```
 
 </Accordion>
@@ -212,18 +212,19 @@ response = model.invoke([*state["messages"]], config)
 
 Having done this, you should be ready to begin working with this state on the client side.
 
+
 ## Connecting remote state to CopilotKit components
 
 As a simple example, let's start by hooking this data up to one of our built-in chat components, such as `CopilotChat`.
 
-With the `useCoAgentStateRender` hook, we'll listen for this agent to return a structured weather forecast, and return it as a multiline string.
+With the `useCoagentStateRender` hook, we'll listen for this agent to return a structured weather forecast, and return it as a multiline string.
 
 <Accordions><Accordion title="View complete React example">
 
 ```tsx
 "use client";
 
-import { useCoAgentStateRender } from "@copilotkit/react-core";
+import { useCoagentStateRender } from "@copilotkit/react-core";
 import { CopilotChat } from "@copilotkit/react-ui";
 
 interface WeatherAgentState {
@@ -238,12 +239,10 @@ interface WeatherAgentState {
 }
 
 export function SimpleWeatherChat() {
-  useCoAgentStateRender<WeatherAgentState>({
+  useCoagentStateRender<WeatherAgentState>({
     name: "basic_agent",
     render: ({ status, state, nodeName }) => {
-      return `
-Conditions: ${state.final_response.conditions}, Temperature: ${state.final_response.temperature}ºF
-`;
+      return `Conditions: ${state.final_response.conditions}, Temperature: ${state.final_response.temperature}ºF`;
     },
   });
 
@@ -260,10 +259,10 @@ Conditions: ${state.final_response.conditions}, Temperature: ${state.final_respo
 
 </Accordion></Accordions>
 
-To render state in the chat window, use the `useCoAgentStateRender` hook:
+To render state in the chat window, use the `useCoagentStateRender` hook:
 
 ```tsx
-useCoAgentStateRender<WeatherAgentState>({
+useCoagentStateRender<WeatherAgentState>({
   name: "basic_agent", // the agent's name
 
   // render can be a function or a string, just like useCopilotAction
@@ -280,7 +279,7 @@ Then, when you tell the chatbot where you'd like to see a weather forecast for, 
 The render function can return any valid React node; if you'd rather display a formatted response, that's easy too:
 
 ```tsx
-useCoAgentStateRender<WeatherAgentState>({
+useCoagentStateRender<WeatherAgentState>({
   name: "basic_agent", // the agent's name
 
   // render can be a function or a string, just like useCopilotAction
