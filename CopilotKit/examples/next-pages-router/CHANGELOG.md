@@ -1,5 +1,29 @@
 # next-pages-router
 
+## 1.3.16-mme-copilot-suggestions.1
+
+### Patch Changes
+
+- Send full instructions as system message
+- Updated dependencies
+  - @copilotkit/react-textarea@1.3.16-mme-copilot-suggestions.1
+  - @copilotkit/react-core@1.3.16-mme-copilot-suggestions.1
+  - @copilotkit/react-ui@1.3.16-mme-copilot-suggestions.1
+  - @copilotkit/runtime@1.3.16-mme-copilot-suggestions.1
+  - @copilotkit/shared@1.3.16-mme-copilot-suggestions.1
+
+## 1.3.16-mme-copilot-suggestions.0
+
+### Patch Changes
+
+- Headless suggestions
+- Updated dependencies
+  - @copilotkit/react-ui@1.3.16-mme-copilot-suggestions.0
+  - @copilotkit/react-core@1.3.16-mme-copilot-suggestions.0
+  - @copilotkit/react-textarea@1.3.16-mme-copilot-suggestions.0
+  - @copilotkit/runtime@1.3.16-mme-copilot-suggestions.0
+  - @copilotkit/shared@1.3.16-mme-copilot-suggestions.0
+
 ## 1.3.15
 
 ### Patch Changes

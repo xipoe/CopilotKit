@@ -1,5 +1,17 @@
 # eslint-config-custom
 
+## 1.3.16-mme-copilot-suggestions.1
+
+### Patch Changes
+
+- Send full instructions as system message
+
+## 1.3.16-mme-copilot-suggestions.0
+
+### Patch Changes
+
+- Headless suggestions
+
 ## 1.3.15
 
 ### Patch Changes
