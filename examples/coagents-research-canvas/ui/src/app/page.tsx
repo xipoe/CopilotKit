@@ -7,6 +7,8 @@ import {
   useModelSelectorContext,
 } from "@/lib/model-selector-provider";
 import { ModelSelector } from "@/components/ModelSelector";
+import { useRouter, useSearchParams } from "next/navigation";
+import { router } from "next/client";
 
 export default function ModelSelectorWrapper() {
   return (
@@ -18,11 +20,11 @@ export default function ModelSelectorWrapper() {
 }
 
 function Home() {
-  const { agent } = useModelSelectorContext();
+  const { agent, useLgc } = useModelSelectorContext();
 
   return (
     <CopilotKit
-      runtimeUrl="/api/copilotkit"
+      runtimeUrl={useLgc ? "/api/copilotkit-lgc" : "/api/copilotkit"}
       showDevConsole={false}
       agent={agent}
     >
