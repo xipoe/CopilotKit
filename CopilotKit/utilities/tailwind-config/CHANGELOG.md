@@ -1,5 +1,20 @@
 # tailwind-config
 
+## 1.3.16-pre.2
+
+### Patch Changes
+
+- Add latest change from main
+
+## 1.3.16-mme-reset-chat.1
+
+### Patch Changes
+
+- 164ce73: Add reset and threadId to useCopilotChat
+- f3ce10a: Add custom stop/reload
+- Merge main
+- c7df09a: Move threadId to context
+
 ## 1.3.16-mme-revert-rxjs-changes.0
 
 ### Patch Changes
